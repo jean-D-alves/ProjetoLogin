@@ -30,4 +30,4 @@ dessa forma com a "/" no começo
 foi feito ate agr com express portanto um framework e o não entendimento de certos conseitos não faram mal.
 ***
 # ATENÇÃO 
-se der erro algo não aparecer fale com comigo que provavelmente é o framework. alem disso a adição de outra pagina html necessita de configuração no framework portanto pode falar comigo.
+se der erro algo não aparecer fale com comigo que provavelmente é o framework. alem disso a adição de outra pagina html necessita de configuração no framework portanto pode falar comigo
