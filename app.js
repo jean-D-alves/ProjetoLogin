@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const pageDir = path.join(__dirname,"pages")
 const app = express()
-app.use(express.static(__dirname,"public"))
+app.use(express.static(path.join(__dirname,"public")))
 
 app.get("/",(req,res)=>{
     res.sendFile(path.join(pageDir,"home.html"))
