@@ -13,7 +13,12 @@ app.use(express.static(path.join(__dirname,"public")))
 app.get("/",(req,res)=>{
     res.sendFile(path.join(pageDir,"home.html"))
 })
-
+app.get("/login",(req,res)=>{
+    res.sendFile(path.join(pageDir, "login.html"))
+})
+app.get("create",(req,res)=>[
+    res.sendFile(path.join(pageDir,"create.html"))
+])
 app.all((/.*/),(req,res)=>{
     res.sendFile(path.join(pageDir,"404.html"))
 })
