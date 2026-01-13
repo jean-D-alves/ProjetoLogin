@@ -1,115 +1,162 @@
 @charset "UTF-8";
 
-*{
-    margin:0px;
-    padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
-body, html{
-    background-color: lightblue;
-    height: 100vh;
-    width: 100vw;
+body,
+html {
+  background-color: lightblue;
+  height: 100vh;
+  width: 100vw;
 }
-main{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
-#login{
-    background-color: white;
-    width: 400px;
-    height: 300px;
-    
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.281);
+.AlertElement {
+  width: 380px;
+  height: 80px;
+
+  top: 10px;
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #00ff807e;
+  color: #027a3e;
+  border: 2px solid #027a3e;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px #00000048;
 }
-#login > #form{
-    display: block;
-    padding: 10px;
+.AlertElement.negativo {
+  background-color: #fa53067e;
+  color: #ffffff;
+  border: 2px solid #7a0202;
 }
-#form > h1{
-    text-align: center;
-    margin-bottom: 10px;
+.AlertElement > .ButtonAlert {
+  width: 25px;
+  height: 25px;
+
+  position: absolute;
+  top: 4px;
+  right: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #0ec76abe;
+  color: #027a3e;
+  border: 1px solid #027a3e;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #00000048;
 }
-.campo{
-    display: flex;
-    flex-flow: row nowrap;
+.ButtonAlert.negativo{
+  background-color: #fa5306b6;
+  color: #ffffff;
+  border: 1px solid #7a0202;
 }
-span{
-    font-size: 35px;
-    align-self: center;
+#login {
+  background-color: white;
+  width: 400px;
+  height: 300px;
+
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.281);
 }
-.campo > label{
-    display: none;
+#login > #form {
+  display: block;
+  padding: 10px;
+}
+#form > h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.campo {
+  display: flex;
+  flex-flow: row nowrap;
+}
+span {
+  font-size: 35px;
+  align-self: center;
+}
+.campo > label {
+  display: none;
 }
 .campo > input {
-    display: block;
-    width: 80%;
-    margin: 10px 0px;
-    padding: 5px;
-    height: 35px;
-    font-size: 1em;
-    border: 0px;
-    border-radius: 8px;
-    background-color: lightgray;
+  display: block;
+  width: 80%;
+  margin: 10px 0px;
+  padding: 5px;
+  height: 35px;
+  font-size: 1em;
+  border: 0px;
+  border-radius: 8px;
+  background-color: lightgray;
 }
-.campo >input:focus-within{
-    background: white;
+.campo > input:focus-within {
+  background: white;
 }
 
-.botao{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 110px;
+.botao {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 110px;
 }
-.botao > input[type=submit] {
-    background: rgb(158, 158, 158);
-    height: 40px;
-    width: 50%;
-    margin: auto;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 1.3em;
+.botao > input[type="submit"] {
+  background: rgb(158, 158, 158);
+  height: 40px;
+  width: 50%;
+  margin: auto;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3em;
 }
-.botao > input[type=submit]:hover{
-    background-color: gray;
-    color: white;
+.botao > input[type="submit"]:hover {
+  background-color: gray;
+  color: white;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #login {
+    width: 70vw;
+    height: 300px;
+  }
+  .campo {
+    width: 60%;
+  }
+  .botao > input[type="submit"] {
+    width: 40%;
+    font-size: 1.5em;
     font-weight: 500;
+  }
 }
-
-@media screen and (min-width:768px) and (max-width:992px) {
-    #login{
-        width: 70vw;
-        height: 300px;
-    }
-    .campo{
-        width: 60%;
-    }
-    .botao > input[type=submit] {
-        width: 40%;
-        font-size: 1.5em;
-        font-weight: 500;
-    }
-}
-@media screen and (min-width:992px) {
-    #login{
-        width: 50vw;
-        height: 50vh;
-    }
-    .campo{
-        width: 60%;
-    }
-    .botao > input[type=submit] {
-        width: 40%;
-        font-size: 1.5em;
-        font-weight: 500;
-    }
+@media screen and (min-width: 992px) {
+  #login {
+    width: 50vw;
+    height: 50vh;
+  }
+  .campo {
+    width: 60%;
+  }
+  .botao > input[type="submit"] {
+    width: 40%;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
 }
