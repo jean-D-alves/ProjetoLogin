@@ -17,7 +17,8 @@ form.addEventListener("submit", async (e) => {
       }),
     });
     const data = await response.json();
-    const token = SaveToken(data.token);
+    console.log(data)
+    const token = SaveToken(data.data.token);
     return token;
   } catch (error) {
     console.log(error);
