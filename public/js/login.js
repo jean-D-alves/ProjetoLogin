@@ -26,7 +26,7 @@ form.addEventListener("submit", async (e) => {
     const token = SaveToken(data.data.token);
     return token;
   } catch (error) {
-    console.log(error);
+    ElementAlert("The backend is not working", "negativo");
   }
 });
 function ElementAlert(message, status) {
@@ -38,8 +38,8 @@ function ElementAlert(message, status) {
   const button = document.createElement("button");
   button.textContent = "x";
   button.classList.add("ButtonAlert");
-  button.onclick = ()=>{
-    main.removeChild(div)
+  button.onclick = () => {
+    main.removeChild(div);
   };
   const text = document.createElement("p");
   text.textContent = message;
