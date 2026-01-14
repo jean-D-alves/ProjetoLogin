@@ -13,11 +13,14 @@ app.get("/",(req,res)=>{
     res.sendFile(path.join(pageDir,"home.html"))
 })
 app.get("/login",(req,res)=>{
-    res.sendFile(path.join(pageDir, "login.html"))
+    res.sendFile(path.join(pageDir,"login.html"))
 })
 app.get("create",(req,res)=>[
     res.sendFile(path.join(pageDir,"create.html"))
 ])
+app.get("/users",(req,res)=>{
+    res.sendFile(path.join(pageDir,"users.html"))
+})
 app.all((/.*/),(req,res)=>{
     res.sendFile(path.join(pageDir,"404.html"))
 })
