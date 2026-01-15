@@ -19,7 +19,7 @@ app.get("/",(req,res)=>{
 app.get("/login",(req,res)=>{
     res.sendFile(path.join(pageDir,"login.html"))
 })
-app.get("create",(req,res)=>[
+app.get("/create",(req,res)=>[
     res.sendFile(path.join(pageDir,"create.html"))
 ])
 app.get("/users",(req,res)=>{
