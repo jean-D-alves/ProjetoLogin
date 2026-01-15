@@ -1,5 +1,51 @@
 # login e criação de usuario
 
+# Estrutura
+
+```
+└── 📁 frontend
+    ├── 📁 api
+    │   ├── 📁 src
+    │   │   ├── 📁 config
+    │   │   │   └── 📄 db.js
+    │   │   ├── 📁 controllers
+    │   │   │   └── 📄 Login.controller.js
+    │   │   ├── 📁 middleware
+    │   │   │   ├── 📄 auth.middleware.js
+    │   │   │   └── 📄 redirect.middleware.js
+    │   │   ├── 📁 models
+    │   │   │   └── 📄 Login.model.js
+    │   │   └── 📁 router
+    │   │       └── 📄 Login.route.js
+    │   └── 📝 README.md
+    ├── 📁 pages
+    │   ├── 🌐 404.html
+    │   ├── 🌐 home.html
+    │   └── 🌐 login.html
+    ├── 📁 public
+    │   ├── 📁 css
+    │   │   ├── 🎨 global.css
+    │   │   └── 🎨 home.css
+    │   ├── 📁 imagens
+    │   │   ├── 🖼️ back-pc.jpg
+    │   │   ├── 🖼️ back-phone.jpg
+    │   │   ├── 🖼️ back-print.jpg
+    │   │   ├── 🖼️ back-tablet.jpg
+    │   │   ├── 🖼️ back-tv.jpg
+    │   │   ├── 🖼️ icon-pc.png
+    │   │   ├── 🖼️ icon-phone.png
+    │   │   ├── 🖼️ icon-print.png
+    │   │   ├── 🖼️ icon-tablet.png
+    │   │   └── 🖼️ icon-tv.png
+    │   └── 📁 js
+    │       └── 📄 login.js
+    ├── ⚙️ .gitignore
+    ├── 📝 README.md
+    ├── 📄 app.js
+    ├── ⚙️ package-lock.json
+    └── ⚙️ package.json
+```
+
 ## iniciar o projeto
 no terminal
 ```
