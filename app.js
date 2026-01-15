@@ -29,5 +29,5 @@ app.all((/.*/),(req,res)=>{
     res.sendFile(path.join(pageDir,"404.html"))
 })
 app.listen(process.env.PORT,()=>{
-    console.log("http://localhost:3333")
+    console.log(`http://localhost:${process.env.PORT}`)
 })
