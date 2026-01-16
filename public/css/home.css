@@ -1,1 +1,50 @@
 @charset "UTF-8";
+
+*{
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background: url(/imagens/pexels-pixabay-2623\.jpg) no-repeat center right;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+header{
+    padding: 10px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+main{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+}
+section{
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border-radius: 5px;
+}
+a{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    width: 50%;
+}
+.texto{
+    color: white;
+    align-self: flex-start;
+    width: 500px;
+    height: 70px;
+    font-size: 25px;
+
+}
