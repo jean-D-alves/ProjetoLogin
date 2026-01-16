@@ -6,6 +6,7 @@ form.addEventListener("submit", async (e) => {
   const password = document.getElementById("isen").value;
   try {
     const response = await fetch("https://localhost:3333/api/login", {
+
       method: "POST",
       credentials: "include",
       headers: {
