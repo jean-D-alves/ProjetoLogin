@@ -1,37 +1,36 @@
-const form = document.getElementById("formTag");
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const email = document.getElementById("ilogin").value;
-  const password = document.getElementById("isen").value;
+async function GetUsers() {
   try {
-    const response = await fetch("/api/login", {
-      method: "POST",
+    const response = await fetch("/api/", {
       credentials: "include",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
     });
     const data = await response.json();
-    if (data) {
-      ElementAlert(
-        data.statusText,
-        data.status === 200 ? "positive" : "negativo"
-      );
+    if (response.status === 400) {
+      ElementAlert("Bad request redirecting to home", "negativo");
+
       setTimeout(() => {
-        window.location.href = "/users";
+        window.location.href = "/";
       }, 2000);
     }
-    const token = SaveToken(data.data.token);
-    return token;
-  } catch (error) {
-    ElementAlert("The backend is not working", "negativo");
-  }
-});
+    return data.data;
+  } catch (erro) {}
+}
+async function AddUserTable() {
+  const TableBody = document.getElementById("tbody");
+  const users = await GetUsers();
+  users.map((user) => {
+    TableBody.innerHTML += `
+          <tr id="${user.id}">
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.age}</td>
+          </tr>`;
+  });
+}
 function ElementAlert(message, status) {
   const main = document.querySelector("main");
 
@@ -56,7 +55,4 @@ function ElementAlert(message, status) {
   div.appendChild(button);
   main.appendChild(div);
 }
-function SaveToken(token) {
-  const save = localStorage.setItem("token", token);
-  return save;
-}
+await AddUserTable();
