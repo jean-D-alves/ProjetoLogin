@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 * {
+  overflow: hidden;
   margin: 0px;
   padding: 0px;
   font-family: Arial, Helvetica, sans-serif;
@@ -15,8 +16,25 @@ body{
   background: url(/imagens/back-phone.jpg) no-repeat center;
   background-size: cover;
 }
+header{
+  height: 70px;
+}
+header > a > span{
+  color: white;
+  font-size: 30px;
+  margin: 5px;
+  padding: 10px;
+}
+span:hover{
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 255, 255, 0.616);
+  box-shadow:  -5px 5px 10px rgba(0, 0, 0, 0.671);
+  transition: transform .3s, border .1s;
+  transform: translate(2px, 1px);
+}
 main {
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   display: flex;
   flex-flow: row nowrap;
@@ -152,20 +170,20 @@ main {
   transform: translate(-3px, 3px);
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 600px) and (max-width: 992px) {
   body{
     background: url(/imagens/back-tablet.jpg) no-repeat center;
     background-size: cover;
   }
   #login {
     width: 70vw;
-    height: 300px;
+    height: 60vh;
     background-color: transparent;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, .2);
   }
   .campo {
-    width: 60%;
+    width: 100%;
   }
   .botao > input[type="submit"] {
     width: 40%;
@@ -182,11 +200,11 @@ main {
     background-color: transparent;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, .2);
-    width: 50vw;
-    height: 50vh;
+    width: 45vw;
+    height: 60vh;
   }
   .campo {
-    width: 60%;
+    width: 100%;
   }
   .botao > input[type="submit"] {
     width: 40%;
