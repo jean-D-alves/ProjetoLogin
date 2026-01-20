@@ -3,20 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="/css/login.css" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/register.css" />
     <link href='https://cdn.boxicons.com/3.0.7/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   </head>
   <body>
     <main>
-      <section id="login">
+      <section id="register">
         <div id="form">
-          <h1>Login</h1>
-          <p>Faça login para acessar sua conta!</p>
+          <h1>Registro</h1>
+          <p>Registre-se para acessar sua conta!</p>
           <form id="formTag" autocomplete="on">
             <div class="campo">
-              <label for="ilogin">Login</label>
+              <label for="inome">Nome</label>
               <span class='bx  bx-user'></span>
+              <input
+              type="text"
+              name="nome"
+              id="inome"
+              required
+              placeholder="Digite seu nome"
+              autocomplete="nickname"
+              />
+            </div>
+            <div class="campo">
+              <label for="iidade">Idade</label>
+              <span class="material-symbols-outlined">
+              calendar_month
+              </span>
+              <input 
+              type="date" 
+              name="idade" 
+              id="iidade" 
+              required>
+            </div>
+            <div class="campo">
+              <label for="ilogin">Login</label>
+              <span 
+              class="material-symbols-outlined">mail
+              </span>
               <input
                 type="email"
                 name="login"
@@ -41,12 +67,11 @@
               />
             </div>
             <div class="botao">
-              <input type="submit" value="Entrar" />
+              <input type="submit" value="Registrar-se" />
             </div>
           </form>
         </div>
       </section>
     </main>
-    <script src="/js/login.js"></script>
   </body>
 </html>
