@@ -1,12 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
     <link rel="stylesheet" href="/css/register.css" />
-    <link href='https://cdn.boxicons.com/3.0.7/fonts/basic/boxicons.min.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link
+      href="https://cdn.boxicons.com/3.0.7/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
@@ -17,32 +23,24 @@
           <form id="formTag" autocomplete="on">
             <div class="campo">
               <label for="inome">Nome</label>
-              <span class='bx  bx-user'></span>
+              <span class="bx bx-user"></span>
               <input
-              type="text"
-              name="nome"
-              id="inome"
-              required
-              placeholder="Digite seu nome"
-              autocomplete="nickname"
+                type="text"
+                name="nome"
+                id="inome"
+                required
+                placeholder="Digite seu nome"
+                autocomplete="nickname"
               />
             </div>
             <div class="campo">
               <label for="iidade">Idade</label>
-              <span class="material-symbols-outlined">
-              calendar_month
-              </span>
-              <input 
-              type="date" 
-              name="idade" 
-              id="iidade" 
-              required>
+              <span class="material-symbols-outlined"> calendar_month </span>
+              <input type="date" name="idade" id="iidade" required />
             </div>
             <div class="campo">
               <label for="ilogin">Login</label>
-              <span 
-              class="material-symbols-outlined">mail
-              </span>
+              <span class="material-symbols-outlined">mail </span>
               <input
                 type="email"
                 name="login"
@@ -54,7 +52,7 @@
             </div>
             <div class="campo">
               <label for="isen">Senha</label>
-              <span class='bx  bx-lock-keyhole'></span>
+              <span class="bx bx-lock-keyhole"></span>
               <input
                 type="password"
                 name="sen"
@@ -73,5 +71,6 @@
         </div>
       </section>
     </main>
+    <script src="/js/register.js"></script>
   </body>
 </html>

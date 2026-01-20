@@ -37,18 +37,41 @@ export async function CreateUser(req, res) {
     age,
     role,
   });
+  const token = jwt.sign(
+    {
+      id: creation.id,
+      name: creation.name,
+      email: creation.email,
+      role: creation.role,
+    },
+    process.env.SECRET_JWT,
+    { expiresIn: "1h" },
+  );
 
   if (!creation) {
     const notCreate = new Response(
       400,
       "Bad Request",
       { message: "user not created" },
-      "POST"
+      "POST",
     );
     return res.status(notCreate.status).json(notCreate.toJSON());
   }
 
-  const response = new Response(201, "Created", creation, "POST");
+  const response = new Response(
+    201,
+    "Created",
+    {
+      user: {
+        id: creation.id,
+        name: creation.name,
+        email: creation.email,
+        role: creation.role,
+      },
+      token,
+    },
+    "POST",
+  );
   res.status(response.status).json(response.toJSON());
 }
 
@@ -62,7 +85,7 @@ export async function LoginUser(req, res) {
       400,
       "Bad Request",
       { message: "This user does not exist." },
-      "POST"
+      "POST",
     );
     return res.status(erroOfUser.status).json(erroOfUser.toJSON());
   }
@@ -74,7 +97,7 @@ export async function LoginUser(req, res) {
       400,
       "Bad Request",
       { message: "Invalid password." },
-      "POST"
+      "POST",
     );
     return res.status(erroOfPassword.status).json(erroOfPassword.toJSON());
   }
@@ -87,7 +110,7 @@ export async function LoginUser(req, res) {
       role: user.role,
     },
     process.env.SECRET_JWT,
-    { expiresIn: "1h" }
+    { expiresIn: "1h" },
   );
 
   const response = new Response(
@@ -102,7 +125,7 @@ export async function LoginUser(req, res) {
       },
       token,
     },
-    "POST"
+    "POST",
   );
 
   res.status(response.status).json(response.toJSON());
@@ -116,7 +139,7 @@ export async function ShowAllUser(req, res) {
       404,
       "Not Found",
       { message: "No users found." },
-      "GET"
+      "GET",
     );
     return res.status(erroOfUsers.status).json(erroOfUsers.toJSON());
   }
@@ -137,7 +160,7 @@ export async function ShowUser(req, res) {
       404,
       "Not Found",
       { message: "This user does not exist." },
-      "GET"
+      "GET",
     );
     return res.status(erroOfUser.status).json(erroOfUser.toJSON());
   }
