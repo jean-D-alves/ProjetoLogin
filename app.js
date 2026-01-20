@@ -20,8 +20,8 @@ app.get("/", (req, res) => {
 app.get("/login", (req, res) => {
   res.sendFile(path.join(pageDir, "login.html"));
 });
-app.get("/create", (req, res) => [
-  res.sendFile(path.join(pageDir, "create.html")),
+app.get("/register", (req, res) => [
+  res.sendFile(path.join(pageDir, "register.html")),
 ]);
 app.get("/users", (req, res) => {
   res.sendFile(path.join(pageDir, "users.html"));
