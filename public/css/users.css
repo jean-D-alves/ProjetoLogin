@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+}
+body {
+  background: url(/imagens/back-phone.jpg) no-repeat center;
+  background-size: cover;
+}
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.AlertElement {
+  width: 380px;
+  height: 80px;
+
+  top: 10px;
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #0080009f;
+  color: #ffffff;
+  border: 2px solid #027a3e;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px #00000048;
+}
+.AlertElement.negativo {
+  background-color: #fa53067e;
+  color: #ffffff;
+  border: 2px solid #7a0202;
+}
+.AlertElement > .ButtonAlert {
+  width: 25px;
+  height: 25px;
+
+  position: absolute;
+  top: 4px;
+  right: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #008000c5;
+  color: #ffffff;
+  border: 1px solid #027a3e;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #00000048;
+}
+.ButtonAlert.negativo {
+  background-color: #fa5306b6;
+  color: #ffffff;
+  border: 1px solid #7a0202;
+}
+#table {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  width: 400px;
+  height: auto;
+  padding: 10px;
+
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.281);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+tr:hover {
+  background-color: #ccc;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  body {
+    background: url(/imagens/back-tablet.jpg) no-repeat center;
+    background-size: cover;
+  }
+  #table {
+    width: 700px;
+  }
+  table{
+    width: 600px;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    background: url(/imagens/back-pc.jpg) no-repeat center;
+    background-size: cover;
+  }
+  #table {
+    width: 900px;
+  }
+  table{
+    width: 800px;
+  }
+}

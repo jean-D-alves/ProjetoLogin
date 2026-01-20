@@ -144,7 +144,7 @@ export async function ShowUser(req, res) {
 
   const { password, ...safeUser } = user;
 
-  const response = new Response(200, "ok", { user: safeUser }, "GET");
+  const response = new Response(200, "ok", [safeUser], "GET");
 
   res.status(response.status).json(response.toJSON());
 }
