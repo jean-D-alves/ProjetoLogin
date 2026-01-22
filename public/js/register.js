@@ -1,9 +1,9 @@
 const form = document.getElementById("formTag");
-
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const name = document.getElementById("inome").value;
-  const age = parseInt(document.getElementById("iidade").value);
+  const data = document.getElementById("iidade").value;
+  const age = new Date().getFullYear() - new Date(data).getFullYear();
   const email = document.getElementById("ilogin").value;
   const password = document.getElementById("isen").value;
   try {
